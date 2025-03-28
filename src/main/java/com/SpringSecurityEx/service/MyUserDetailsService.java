@@ -17,12 +17,12 @@ public class MyUserDetailsService implements UserDetailsService {
     @Autowired
     UsersRepository usersRepository;
 
-    private static final Logger log= LoggerFactory.getLogger(MyUserDetailsService.class);
+    //private static final Logger log= LoggerFactory.getLogger(MyUserDetailsService.class);
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Users user=usersRepository.findByUsername(username);
-         System.out.println(user);
+        // System.out.println(user);
         //log.info("User:{}",user);
         if (user == null) {
             System.out.println("User Not Found");
